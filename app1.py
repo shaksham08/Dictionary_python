@@ -1,4 +1,4 @@
-# Software Developed by Shaksham Sinha 
+# Software Developed by Shaksham Sinha
 # Date : 30th August 2019
 # Description : A basic console based Dictionary app
 
@@ -19,7 +19,8 @@ def translate(word):
     elif word.upper() in data:
         return data[word.upper()]
     elif len(get_close_matches(word, data.keys(), cutoff=0.8)) > 0:
-        yn = input("Did you mean {} instead? Enter Y if yes N if No: ".format(get_close_matches(word, data.keys())[0]))
+        yn = input("Did you mean {} instead? Enter Y if yes N if No: ".format(
+            get_close_matches(word, data.keys())[0]))
         if yn.upper() == "Y":
             return data[get_close_matches(word, data.keys())[0]]
         elif yn.upper() == "N":
@@ -29,6 +30,7 @@ def translate(word):
 
     else:
         return "The word dosent exit please double check again"
+
 
 print("Welcome to My Dictionary App :)")
 word = input("Enter the word to find its meaning : ")
